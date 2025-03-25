@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Map</title>
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Quiz de Géographie</h1>
+        <a href="signup.html">Inscription</a>
+    </header>
+    <main>
+        <div id="map-container">
+            <img src="assets/image/map.jpg" alt="Carte du monde" id="map">
+            <canvas id="map-overlay"></canvas>
+        </div>
+        <input type="text" id="country-input" placeholder="Entrez le nom d'un pays">
+        <button onclick="checkAnswer()">Valider</button>
+        <p id="score-display">Score: 0</p>
+        <p id="timer-display">Temps restant: 60s</p>
+    </main>
+    <script src="scripts/data.js"></script>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/score.js"></script>
+</body>
+</html>
