@@ -9,7 +9,7 @@ var tileLayers = {
     "cartoLight": L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; CartoDB'
     }),
-    "thunderforest": L.tileLayer('https://tile.thunderforest.com/landscape/{z}/{x}/{y}.png?apikey=https://tile.thunderforest.com/atlas/{z}/{x}/{y}.png?apikey=f2227bae3c12495787960bc8ea578f22', {
+    "thunderforest": L.tileLayer('https://tile.thunderforest.com/outdoors/{z}/{x}/{y}.png?apikey=f2227bae3c12495787960bc8ea578f22', {
         attribution: '&copy; Thunderforest'
     })
 
