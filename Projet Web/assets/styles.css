@@ -84,3 +84,15 @@ button:hover {
     margin: 10px 0;
     font-weight: bold;
 }
+#map {
+    width: 80%; /* ou une valeur fixe comme 600px */
+    height: 400px;
+    margin: 0 auto; /* Centre horizontalement */
+    display: block;
+}
+
+label, select {
+    font-size: 16px;
+    margin: 10px;
+    padding: 5px;
+}

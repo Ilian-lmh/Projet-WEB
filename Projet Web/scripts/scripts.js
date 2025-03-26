@@ -11,3 +11,4 @@ function checkAnswer() {
         alert("Mauvaise réponse.");
     }
 }
+
