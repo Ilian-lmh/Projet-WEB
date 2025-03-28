@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Projet Web"
+    "\\Projet Web",
+    "\\Projet Web\\assets",
+    "\\Projet Web\\scripts"
   ],
-  "SelectedNode": "\\Projet Web\\index.html",
+  "SelectedNode": "\\Projet Web\\assets\\styles.css",
   "PreviewInSolutionExplorer": false
 }

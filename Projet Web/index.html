@@ -1,20 +1,45 @@
-    
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enterrement de Vie de Garçon</title>
+    <title>Navbar Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-    <header>
-        <h1>LUCASNTM</h1>
-    </header>
+    <nav class="navbar navbar-light bg-light">
+
+        <a class="navbar-brand" href="#">MegaMenu</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="banner">
+        <!-- Contenu optionnel à afficher sur l'image de fond -->
+    </div>
+
     <main>
         <section class="group">
             <a href="group1.html">
-                <img src="assets/images/group1.jpg" alt="Groupe 1" class="group-image">
+                <img src="assets/parachute.jpg" alt="Groupe 1" class="group-image">
             </a>
             <div class="group-description">
                 <h2>Groupe Aventure Extrême</h2>
@@ -24,7 +49,7 @@
 
         <section class="group">
             <a href="group2.html">
-                <img src="assets/images/group2.jpg" alt="Groupe 2" class="group-image">
+                <img src="assets/resto.jpg" alt="Groupe 2" class="group-image">
             </a>
             <div class="group-description">
                 <h2>Groupe Fête et Luxe</h2>
@@ -34,7 +59,7 @@
 
         <section class="group">
             <a href="group3.html">
-                <img src="assets/images/group3.jpg" alt="Groupe 3" class="group-image">
+                <img src="assets/graf.jpg" alt="Groupe 3" class="group-image">
             </a>
             <div class="group-description">
                 <h2>Groupe Détente et Bien-être</h2>
@@ -42,5 +67,64 @@
             </div>
         </section>
     </main>
+
+    <section class="testimonials">
+        <h2>Avis de nos clients</h2>
+        <div class="testimonial">
+            <p>"Expérience incroyable ! Mon enterrement de vie de garçon était parfait. Merci à toute l'équipe !"</p>
+            <span>- Jean Dupont</span>
+        </div>
+        <div class="testimonial">
+            <p>"Un week-end de folie, des souvenirs gravés à jamais !"</p>
+            <span>- Paul Martin</span>
+        </div>
+        <div class="testimonial">
+            <p>"Organisation au top, je recommande sans hésiter !"</p>
+            <span>- Sophie Lemoine</span>
+        </div>
+    </section>
+
+    <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Web design</a></li>
+                            <li><a href="#">Development</a></li>
+                            <li><a href="#">Hosting</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Company Name</h3>
+                        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum.</p>
+                    </div>
+                    <div class="col item social">
+                        <a href="#"><i class="icon ion-social-facebook"></i></a>
+                        <a href="#"><i class="icon ion-social-twitter"></i></a>
+                        <a href="#"><i class="icon ion-social-snapchat"></i></a>
+                        <a href="#"><i class="icon ion-social-instagram"></i></a>
+                    </div>
+                </div>
+                <p class="copyright">Company Name © 2024</p>
+            </div>
+        </footer>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/scriptnavbar.js"></script>
 </body>
-</html> 
+
+</html>
+
