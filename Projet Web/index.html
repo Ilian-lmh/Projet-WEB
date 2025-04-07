@@ -8,38 +8,109 @@
     <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-    <nav class="navbar navbar-light bg-light">
+    <header>
+        <nav class="navbar navbar-light bg-light">
 
-        <a class="navbar-brand" href="#">MegaMenu</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-            </ul>
+            <a class="navbar-brand" href="#">MegaMenu</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div id="imagePrincipale" style="background-image: url('assets/soiree.jpg');">
+
+            <h1>
+                Lille
+            </h1>
+            <div id="premierTrait"></div>
+            <h3>Découvrer Lille et sa richesse culturelle<br>ACCEUIL</h3>
         </div>
-    </nav>
 
-    <div class="banner">
-        <!-- Contenu optionnel à afficher sur l'image de fond -->
-    </div>
+        <div class="cta-buttons">
+            <a href="#devis" class="btn btn-devis">Demander un devis</a>
+            <a href="#destinations" class="btn btn-destination">Choisir une destination</a>
+        </div>
+    </header>
 
-    <main>
-        <section class="group">
+    <main id="groupes">
+        <section class="extra-info">
+            <div class="container">
+                <h2>Pourquoi nous choisir ?</h2>
+                <p>
+                    Organiser un enterrement de vie de garçon, c’est bien plus qu’un simple week-end entre amis : c’est la dernière grande folie avant le grand saut ! Des EVG en aventures légendaires entre soirées explosives, paintball urbain et défis inattendus, nous avons décidé de repousser les limites de l’ordinaire.
+
+                    Avec nous, dites adieu aux soirées banales ! Que vous rêviez d’une expérience luxueuse façon VIP, d’un challenge extrême entre potes ou d’un moment détente digne d’un spa royal, notre équipe s’inspire des meilleures idées du film pour créer VOTRE scénario parfait.
+
+                    Une limousine, un strip club et un lance-flammes ? 
+                    Mais une organisation aux petits oignons, des activités personnalisées et une ambiance de folie ? C’est garanti.
+
+                    Alors, prêt à vivre votre propre Budapest ? 😎
+
+                    .
+                </p>
+            </div>
+        </section>
+
+        <section class="top-destination" id="activites">
+            <div class="container">
+                <h2 class="section-title">TOP destination POUR UN EVG RÉUSSI</h2>
+                <p class="section-subtitle">
+                    Des destination mémorables pour un week-end entre potes inoubliable.
+                    Paintball, karting, escape game ou encore croisière privée… on a tout prévu pour toutes destinations.
+                </p>
+                <div class="grid-destination">
+                    <!-- Activité 1 -->
+                    <div class="activite-card">
+                        <img src="assets/lisbonne.jpg" alt="Activité 1">
+                        <div class="activite-title">Lisbonne</div>
+                    </div>
+                    <!-- Activité 2 -->
+                    <div class="activite-card">
+                        <img src="assets/prague.jpg" alt="Activité 2">
+                        <div class="activite-title">Prague</div>
+                    </div>
+                    <!-- Activité 3 -->
+                    <div class="activite-card">
+                        <img src="assets/berlin.jpeg" alt="Activité 3">
+                        <div class="activite-title">Berlin</div>
+                    </div>
+                    <!-- Activité 4 -->
+                    <div class="activite-card">
+                        <img src="assets/budapest.jpg" alt="Activité 4">
+                        <div class="activite-title">Budapest</div>
+                    </div>
+                    <div class="activite-card">
+                        <img src="assets/amsterdam.avif" alt="Activité 4">
+                        <div class="activite-title">Amsterdam</div>
+                    </div>
+                    <div class="activite-card">
+                        <img src="assets/barca.avif" alt="Activité 4">
+                        <div class="activite-title">Barcelone</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="group" id="groupe-aventure">
             <a href="group1.html">
-                <img src="assets/parachute.jpg" alt="Groupe 1" class="group-image">
+                <img src="assets/parachute.jpg" alt="Groupe Aventure Extrême" class="group-image">
             </a>
             <div class="group-description">
                 <h2>Groupe Aventure Extrême</h2>
@@ -47,9 +118,9 @@
             </div>
         </section>
 
-        <section class="group">
+        <section class="group" id="groupe-fete">
             <a href="group2.html">
-                <img src="assets/resto.jpg" alt="Groupe 2" class="group-image">
+                <img src="assets/resto.jpg" alt="Groupe Fête et Luxe" class="group-image">
             </a>
             <div class="group-description">
                 <h2>Groupe Fête et Luxe</h2>
@@ -57,9 +128,9 @@
             </div>
         </section>
 
-        <section class="group">
+        <section class="group" id="groupe-detente">
             <a href="groupDET.html">
-                <img src="assets/graf.jpg" alt="Groupe 3" class="group-image">
+                <img src="assets/graf.jpg" alt="Groupe Détente et Bien-être" class="group-image">
             </a>
             <div class="group-description">
                 <h2>Groupe Détente et Bien-être</h2>
@@ -68,7 +139,7 @@
         </section>
     </main>
 
-    <section class="testimonials">
+    <section class="testimonials" id="avis">
         <h2>Avis de nos clients</h2>
         <div class="testimonial">
             <p>"Expérience incroyable ! Mon enterrement de vie de garçon était parfait. Merci à toute l'équipe !"</p>
@@ -83,6 +154,7 @@
             <span>- Sophie Lemoine</span>
         </div>
     </section>
+
 
     <div class="footer-dark">
         <footer>
