@@ -1,55 +1,96 @@
-// Initialiser la carte
-var map = L.map('map').setView([20, 0], 2);
-
-// Définition des styles de cartes
-var tileLayers = {
-    "osm": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors'
-    }),
-    "cartoLight": L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; CartoDB'
-    }),
-    "stamenWatercolor": L.tileLayer('https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg', {
-        attribution: '&copy; Stamen Design',
-        maxZoom: 16
-    })
+// Sous-destinations associées à chaque destination principale
+var subDestinations = {
+    "Maroc": [
+        { name: "Marrakech", coords: [31.63, -8.00] },
+        { name: "Essaouira", coords: [31.51, -9.77] }
+    ],
+    "Costa Rica": [
+        { name: "Arenal", coords: [10.47, -84.65] },
+        { name: "Tamarindo", coords: [10.30, -85.84] }
+    ],
+    "Bali": [
+        { name: "Ubud", coords: [-8.5069, 115.2625] },
+        { name: "Kuta", coords: [-8.7177, 115.1682] }
+    ]
 };
 
-// Ajouter la carte par défaut
-tileLayers["osm"].addTo(map);
+var subMarkers = []; // Pour garder une trace des sous-marqueurs
+var mainMarkers = []; // Marqueurs principaux pour suppression
 
-// Sélecteur de style de carte
-document.getElementById('mapStyle').addEventListener('change', function (e) {
-    var selectedStyle = e.target.value;
-    map.eachLayer(layer => {
-        if (layer instanceof L.TileLayer) {
-            map.removeLayer(layer);
-        }
-    });
-    tileLayers[selectedStyle].addTo(map);
-});
-
-// Liste des destinations
+// Définir les destinations principales
 var locations = [
-    { name: "Bali", coords: [-8.4095, 115.1889], zoom: 7 },
-    { name: "Maldvives", coords: [3.2028, 73.2207], zoom: 6 },
-    { name: "Japon", coords: [35.0116, 135.7681], zoom: 7 }
+    { name: "Bali", coords: [-8.4095, 115.1889], zoom: 5 },
+    { name: "Maroc", coords: [31.7917, -7.0926], zoom: 5 },
+    { name: "Costa Rica", coords: [9.7489, -83.7534], zoom: 5 }
 ];
 
-// Ajouter les marqueurs
-locations.forEach(loc => {
-    var marker = L.marker(loc.coords).addTo(map)
-        .bindPopup(`<b>${loc.name}</b><br><button onclick="zoomToLocation(${loc.coords[0]}, ${loc.coords[1]}, ${loc.zoom})">Explorer</button>`);
+// Créer la carte avec taille réduite
+var map = L.map('map').setView([20, 0], 2);
+
+// Réduire la taille de la carte
+var mapContainer = document.getElementById('map');
+mapContainer.style.height = '400px';
+mapContainer.style.position = 'relative';
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+// Ajouter les marqueurs pour les destinations principales
+locations.forEach(function (location) {
+    var marker = L.marker(location.coords).addTo(map);
+    marker.bindPopup(`<b>${location.name}</b><br><button id="exploreBtn" onclick="zoomToLocation(${location.coords[0]}, ${location.coords[1]}, ${location.zoom}, this)">Explorer</button>`);
+    mainMarkers.push(marker);
 });
 
-// Fonction pour zoomer sur une destination
-window.zoomToLocation = function (lat, lng, zoom) {
-    map.flyTo([lat, lng], zoom); // Effet de zoom progressif
-    document.getElementById("resetBtn").style.display = "block"; // Afficher le bouton retour
+// Fonction appelée au clic sur "Explorer"
+window.zoomToLocation = function (lat, lng, zoom, buttonEl) {
+    map.flyTo([lat, lng], zoom);
+
+    // Cacher le bouton "Explorer" cliqué (optionnel)
+    if (buttonEl) {
+        buttonEl.style.display = "none";
+    }
+
+    // Supprimer tous les marqueurs principaux de la carte
+    mainMarkers.forEach(marker => map.removeLayer(marker));
+
+    // Afficher les autres boutons
+    document.getElementById("resetBtn").style.display = "block";
+    document.getElementById("bookBtn").style.display = "block";
+
+    // Supprimer les anciens sous-marqueurs
+    subMarkers.forEach(marker => map.removeLayer(marker));
+    subMarkers = [];
+
+    // Trouver le nom de la destination
+    const loc = locations.find(loc => loc.coords[0] === lat && loc.coords[1] === lng);
+    if (!loc) return;
+
+    const subs = subDestinations[loc.name];
+    if (!subs) return;
+
+    // Ajouter les sous-destinations
+    subs.forEach(sub => {
+        const marker = L.marker(sub.coords).addTo(map)
+            .bindPopup(`<b>${sub.name}</b>`);
+        subMarkers.push(marker);
+    });
 };
 
-// Bouton retour pour revenir à la vue du monde
+// Bouton reset
 document.getElementById("resetBtn").addEventListener("click", function () {
-    map.flyTo([20, 0], 2); // Retour au zoom initial
-    this.style.display = "none"; // Cacher le bouton
+    map.flyTo([20, 0], 2);
+    this.style.display = "none";
+    document.getElementById("bookBtn").style.display = "none";
+    subMarkers.forEach(m => map.removeLayer(m));
+    subMarkers = [];
+
+    // Réafficher tous les boutons "Explorer"
+    document.querySelectorAll('.exploreBtn').forEach(btn => {
+        btn.style.display = "inline-block";
+    });
+
+    // Réafficher les marqueurs principaux
+    mainMarkers.forEach(marker => marker.addTo(map));
 });

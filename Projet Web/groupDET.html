@@ -11,7 +11,7 @@
 </head>
 <body>
     <header>
-        <h1>Quel endroit vous fait rever pour vous détendre ?</h1>
+        <h2 >Quel endroit vous fait rever pour vous détendre ?</h2>
         <label for="mapStyle">Choisissez un style :</label>
         <select id="mapStyle">
             <option value="osm">OpenStreetMap (Classique)</option>
@@ -22,10 +22,16 @@
 
     <main>
         <!-- Conteneur de la carte -->
-        <div id="map"></div>
-        <button id="resetBtn" style="display:none; position: absolute; top: 10px; left: 10px; z-index: 1000;">
-            Retour à la carte du monde
-        </button>
+       <!-- Carte -->
+<div class="map-wrapper">
+  <div id="map"></div>
+  <button class="btn btn-destination">Reserver</button>
+  <button class="btn btn-devis" id="resetBtn" style="display: none;">Réinitialiser</button>
+</div>
+
+
+
+
 
     </main>
 
