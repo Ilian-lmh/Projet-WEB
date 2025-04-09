@@ -29,17 +29,51 @@ var map = L.map('map').setView([20, 0], 2);
 
 // Réduire la taille de la carte
 var mapContainer = document.getElementById('map');
-mapContainer.style.height = '400px';
 mapContainer.style.position = 'relative';
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
 }).addTo(map);
 
+// Définir les tuiles disponibles
+var tileLayers = {
+    "osm": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }),
+    "cartoLight": L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href=\"https://carto.com/attributions\">CARTO</a>',
+        subdomains: 'abcd',
+        maxZoom: 19
+    }),
+    "thunderforest": L.tileLayer('https://tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=YOUR_API_KEY', {
+        attribution: '© Thunderforest, © OpenStreetMap contributors',
+        maxZoom: 22
+    })
+};
+
+// Ajouter la carte par défaut
+tileLayers["osm"].addTo(map);
+
+// Gestion du changement de style via le select
+document.getElementById("mapStyle").addEventListener("change", function (e) {
+    const selectedStyle = e.target.value;
+
+    // Supprimer tous les layers existants
+    Object.values(tileLayers).forEach(layer => {
+        if (map.hasLayer(layer)) {
+            map.removeLayer(layer);
+        }
+    });
+
+    // Ajouter le nouveau layer sélectionné
+    tileLayers[selectedStyle].addTo(map);
+});
+
+
 // Ajouter les marqueurs pour les destinations principales
 locations.forEach(function (location) {
     var marker = L.marker(location.coords).addTo(map);
-    marker.bindPopup(`<b>${location.name}</b><br><button id="exploreBtn" onclick="zoomToLocation(${location.coords[0]}, ${location.coords[1]}, ${location.zoom}, this)">Explorer</button>`);
+    marker.bindPopup(`<b>${location.name}</b><br><button class="exploreBtn" onclick="zoomToLocation(${location.coords[0]}, ${location.coords[1]}, ${location.zoom}, this)">Explorer</button>`);
     mainMarkers.push(marker);
 });
 
@@ -56,8 +90,13 @@ window.zoomToLocation = function (lat, lng, zoom, buttonEl) {
     mainMarkers.forEach(marker => map.removeLayer(marker));
 
     // Afficher les autres boutons
-    document.getElementById("resetBtn").style.display = "block";
-    document.getElementById("bookBtn").style.display = "block";
+    document.getElementById("map-buttons").style.display = "block";
+    document.getElementById("bookBtn").style.display = "inline-block";
+    document.getElementById("resetBtn").style.display = "inline-block";
+
+
+
+
 
     // Supprimer les anciens sous-marqueurs
     subMarkers.forEach(marker => map.removeLayer(marker));
@@ -76,13 +115,14 @@ window.zoomToLocation = function (lat, lng, zoom, buttonEl) {
             .bindPopup(`<b>${sub.name}</b>`);
         subMarkers.push(marker);
     });
+
 };
 
 // Bouton reset
-document.getElementById("resetBtn").addEventListener("click", function () {
+document.getElementById("resetBtn").addEventListener("click", function () { 
     map.flyTo([20, 0], 2);
     this.style.display = "none";
-    document.getElementById("bookBtn").style.display = "none";
+    document.getElementById("map-buttons").style.display = "none";
     subMarkers.forEach(m => map.removeLayer(m));
     subMarkers = [];
 
