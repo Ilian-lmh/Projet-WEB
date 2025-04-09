@@ -73,7 +73,7 @@ document.getElementById("mapStyle").addEventListener("change", function (e) {
 // Ajouter les marqueurs pour les destinations principales
 locations.forEach(function (location) {
     var marker = L.marker(location.coords).addTo(map);
-    marker.bindPopup(`<b>${location.name}</b><br><button class="exploreBtn" onclick="zoomToLocation(${location.coords[0]}, ${location.coords[1]}, ${location.zoom}, this)">Explorer</button>`);
+    marker.bindPopup(`<button class="exploreBtn" onclick="zoomToLocation(${location.coords[0]}, ${location.coords[1]}, ${location.zoom}, this)">${location.name}</button>`);
     mainMarkers.push(marker);
 });
 
@@ -133,4 +133,8 @@ document.getElementById("resetBtn").addEventListener("click", function () {
 
     // Réafficher les marqueurs principaux
     mainMarkers.forEach(marker => marker.addTo(map));
+});
+// Scroll fluide vers la map
+document.getElementById("scrollToMap").addEventListener("click", function () {
+    document.querySelector(".map-wrapper").scrollIntoView({ behavior: "smooth" });
 });

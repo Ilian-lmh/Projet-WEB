@@ -10,30 +10,35 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
-    <header>
-        <h2 >Quel endroit vous fait rever pour vous détendre ?</h2>
+    <!-- Hero section -->
+<section id="hero">
+  <div class="hero-content">
+    <h2>Quel endroit vous fait rêver pour vous détendre ?</h2>
+    <button id="scrollToMap">Explorer la carte</button>
+  </div>
+</section>
+
+<main>
+    <!-- Menu style de carte -->
+    <div class="map-style-selector">
         <label for="mapStyle">Choisissez un style :</label>
         <select id="mapStyle">
             <option value="osm">OpenStreetMap (Classique)</option>
             <option value="cartoLight">Carto (Clair)</option>
             <option value="thunderforest">Thunder Forest</option>
         </select>
-    </header>
-
-    <main>
-        <!-- Conteneur de la carte -->
-       <!-- Carte -->
-<div class="map-wrapper">
-  <div id="map"></div>
-    <!-- Bloc des boutons -->
-<div id="map-buttons" style="display: none; text-align: center; margin-top: 20px;">
-
-        <button id="bookBtn">Réserver</button>
-         <button id="resetBtn">Réinitialiser</button>
     </div>
-</div>
 
-    </main>
+    <!-- Map + boutons -->
+    <div class="map-wrapper">
+        <div id="map"></div>
+        <div id="map-buttons" style="display: none; text-align: center; margin-top: 20px;">
+            <button id="bookBtn" style="display: none;">Réserver</button>
+            <button id="resetBtn" style="display: none;">Réinitialiser</button>
+        </div>
+    </div>
+</main>
+
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
