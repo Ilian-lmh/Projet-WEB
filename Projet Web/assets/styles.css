@@ -580,6 +580,7 @@ nav {
     font-size: 14px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
 }
 
     .exploreBtn:hover {
@@ -620,6 +621,7 @@ nav {
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
 }
 
     #scrollToMap:hover {
@@ -627,4 +629,68 @@ nav {
         transform: scale(1.05);
     }
 
+body.group-page {
+    background-color: #f5f2e7; /* beige doux */
+}
+body.group-page main {
+    margin-top: 30vh;
+    padding-bottom: 80px;
+}
+.quote-block {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #d9ead3; /* vert pastel plante */
+    border-radius: 16px; /* 👈 bord arrondi */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* optionnel, ombre douce */
+}
 
+    .quote-block blockquote {
+        font-size: 1.8rem;
+        font-style: italic;
+        color: #444;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    .quote-block span {
+        display: block;
+        margin-top: 15px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #888;
+    }
+.map-style-selector {
+    margin: 40px auto;
+    text-align: center;
+}
+
+    .map-style-selector select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: #ffffff;
+        color: #333;
+        padding: 10px 40px 10px 16px;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        cursor: pointer;
+        position: relative;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,0 140,0 70,100' fill='%23666'%3E%3C/polygon%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 16px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .map-style-selector select:hover {
+            border-color: #1d3557;
+        }
+    .map-style-selector label {
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: #4b6043; /* vert plante foncé */
+        margin-bottom: 16px;
+    }

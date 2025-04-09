@@ -9,8 +9,9 @@
     <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
-<body>
+<body class="group-page">
     <!-- Hero section -->
+    <div id="imagePrincipale" style="background-image: url('assets/detente_photo.jpg');">
 <section id="hero">
   <div class="hero-content">
     <h2>Quel endroit vous fait rêver pour vous détendre ?</h2>
@@ -19,6 +20,13 @@
 </section>
 
 <main>
+<section class="quote-block">
+    <blockquote>
+  &laquo; Le plus grand luxe de la vie est le calme de l'esprit. &raquo;
+    <span>Inconnu</span>
+  </blockquote>
+</section>
+
     <!-- Menu style de carte -->
     <div class="map-style-selector">
         <label for="mapStyle">Choisissez un style :</label>
@@ -43,5 +51,41 @@
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="scripts/groupDET.js"></script>
+
+         <div class="footer-dark">
+     <footer>
+         <div class="container">
+             <div class="row">
+                 <div class="col-sm-6 col-md-3 item">
+                     <h3>Services</h3>
+                     <ul>
+                         <li><a href="#">Web design</a></li>
+                         <li><a href="#">Development</a></li>
+                         <li><a href="#">Hosting</a></li>
+                     </ul>
+                 </div>
+                 <div class="col-sm-6 col-md-3 item">
+                     <h3>About</h3>
+                     <ul>
+                         <li><a href="#">Company</a></li>
+                         <li><a href="#">Team</a></li>
+                         <li><a href="#">Careers</a></li>
+                     </ul>
+                 </div>
+                 <div class="col-md-6 item text">
+                     <h3>Company Name</h3>
+                     <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum.</p>
+                 </div>
+                 <div class="col item social">
+                     <a href="#"><i class="icon ion-social-facebook"></i></a>
+                     <a href="#"><i class="icon ion-social-twitter"></i></a>
+                     <a href="#"><i class="icon ion-social-snapchat"></i></a>
+                     <a href="#"><i class="icon ion-social-instagram"></i></a>
+                 </div>
+             </div>
+             <p class="copyright">Company Name © 2024</p>
+         </div>
+     </footer>
+ </div>
 </body>
 </html>

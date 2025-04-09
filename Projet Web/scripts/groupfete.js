@@ -1,4 +1,4 @@
-Ôªø// Sous-destinations associ√©es √† chaque destination principale
+// Sous-destinations associÈes ‡ chaque destination principale
 var subDestinations = {
     "Maroc": [
         { name: "Marrakech", coords: [31.63, -8.00] },
@@ -17,41 +17,41 @@ var subDestinations = {
 var subMarkers = []; // Pour garder une trace des sous-marqueurs
 var mainMarkers = []; // Marqueurs principaux pour suppression
 
-// D√©finir les destinations principales
+// DÈfinir les destinations principales
 var locations = [
     { name: "Bali", coords: [-8.4095, 115.1889], zoom: 5 },
     { name: "Maroc", coords: [31.7917, -7.0926], zoom: 5 },
     { name: "Costa Rica", coords: [9.7489, -83.7534], zoom: 5 }
 ];
 
-// Cr√©er la carte avec taille r√©duite
+// CrÈer la carte avec taille rÈduite
 var map = L.map('map').setView([20, 0], 2);
 
-// R√©duire la taille de la carte
+// RÈduire la taille de la carte
 var mapContainer = document.getElementById('map');
 mapContainer.style.position = 'relative';
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '¬© OpenStreetMap contributors'
+    attribution: '© OpenStreetMap contributors'
 }).addTo(map);
 
-// D√©finir les tuiles disponibles
+// DÈfinir les tuiles disponibles
 var tileLayers = {
     "osm": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '¬© OpenStreetMap contributors'
+        attribution: '© OpenStreetMap contributors'
     }),
     "cartoLight": L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href=\"https://carto.com/attributions\">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 19
     }),
-    "thunderforest": L.tileLayer('https://tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=f2227bae3c12495787960bc8ea578f22', {
-        attribution: '¬© Thunderforest, ¬© OpenStreetMap contributors',
+    "thunderforest": L.tileLayer('https://tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=YOUR_API_KEY', {
+        attribution: '© Thunderforest, © OpenStreetMap contributors',
         maxZoom: 22
     })
 };
 
-// Ajouter la carte par d√©faut
+// Ajouter la carte par dÈfaut
 tileLayers["osm"].addTo(map);
 
 // Gestion du changement de style via le select
@@ -65,7 +65,7 @@ document.getElementById("mapStyle").addEventListener("change", function (e) {
         }
     });
 
-    // Ajouter le nouveau layer s√©lectionn√©
+    // Ajouter le nouveau layer sÈlectionnÈ
     tileLayers[selectedStyle].addTo(map);
 });
 
@@ -77,11 +77,11 @@ locations.forEach(function (location) {
     mainMarkers.push(marker);
 });
 
-// Fonction appel√©e au clic sur "Explorer"
+// Fonction appelÈe au clic sur "Explorer"
 window.zoomToLocation = function (lat, lng, zoom, buttonEl) {
     map.flyTo([lat, lng], zoom);
 
-    // Cacher le bouton "Explorer" cliqu√© (optionnel)
+    // Cacher le bouton "Explorer" cliquÈ (optionnel)
     if (buttonEl) {
         buttonEl.style.display = "none";
     }
@@ -119,27 +119,22 @@ window.zoomToLocation = function (lat, lng, zoom, buttonEl) {
 };
 
 // Bouton reset
-document.getElementById("resetBtn").addEventListener("click", function () { 
+document.getElementById("resetBtn").addEventListener("click", function () {
     map.flyTo([20, 0], 2);
     this.style.display = "none";
     document.getElementById("map-buttons").style.display = "none";
     subMarkers.forEach(m => map.removeLayer(m));
     subMarkers = [];
 
-    // R√©afficher tous les boutons "Explorer"
+    // RÈafficher tous les boutons "Explorer"
     document.querySelectorAll('.exploreBtn').forEach(btn => {
         btn.style.display = "inline-block";
     });
 
-    // R√©afficher les marqueurs principaux
+    // RÈafficher les marqueurs principaux
     mainMarkers.forEach(marker => marker.addTo(map));
 });
 // Scroll fluide vers la map
 document.getElementById("scrollToMap").addEventListener("click", function () {
-    const mapTarget = document.querySelector(".map-style-selector");
-    const yOffset = -60; // ‚Üê ajuste selon ton header ou marge
-    const y = mapTarget.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-    window.scrollTo({ top: y, behavior: 'smooth' });
-
+    document.querySelector(".map-wrapper").scrollIntoView({ behavior: "smooth" });
 });
