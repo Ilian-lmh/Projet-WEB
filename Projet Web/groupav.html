@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Interactive</title>
+    <link rel="stylesheet" href="assets/styles.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body class="group-page3">
+    <!-- Hero section -->
+    <div id="imagePrincipale" style="background-image: url('assets/img_extr.avif');">
+        <section id="hero2">
+            <div class="hero-content">
+                <h2>Quel endroit vous fait r&ecirc;ver pour vivre une exp&eacute;rience extr&egrave;me ?</h2>
+                <button id="scrollToMap">Explorer la carte</button>
+            </div>
+        </section>
+
+        <main>
+            <section class="quote-block3">
+                <p class="parag">
+                    Pour ceux qui veulent sortir des sentiers battus, le groupe &laquo;&nbsp;Aventure&nbsp;&raquo; est une invitation &agrave; repousser les limites.
+                    Entre sauts vertigineux, descentes en eaux vives, safaris &agrave; couper le souffle et panoramas &agrave; 360&deg;, ces destinations sont faites
+                    pour les esprits libres en qu&ecirc;te d&rsquo;&eacute;motions fortes. Ce n&rsquo;est pas seulement voyager, c&rsquo;est vivre l&rsquo;instant pr&eacute;sent intens&eacute;ment,
+                    se d&eacute;passer, et collectionner des souvenirs qui marquent une vie. Pr&ecirc;t &agrave; ressentir l&rsquo;adr&eacute;naline&nbsp;?
+                </p>
+            </section>
+
+            <!-- Menu style de carte -->
+            <div class="map-style-selector3">
+                <label for="mapStyle">Choisissez un style :</label>
+                <select id="mapStyle">
+                    <option value="osm">OpenStreetMap (Classique)</option>
+                    <option value="cartoLight">Carto (Clair)</option>
+                    <option value="thunderforest">Thunder Forest</option>
+                </select>
+            </div>
+
+            <!-- Map + boutons -->
+            <div class="map-wrapper">
+                <div id="map"></div>
+                <div id="map-buttons" style="display: none; text-align: center; margin-top: 20px;">
+                    <button id="bookBtn" style="display: none;">Réserver</button>
+                    <button id="resetBtn" style="display: none;">Réinitialiser</button>
+                </div>
+            </div>
+            <section class="quote-block3">
+                <blockquote>
+                    &laquo; L&rsquo;aventure commence l&agrave; o&ugrave; le confort s&rsquo;arr&ecirc;te, et o&ugrave; chaque pas raconte une histoire. &raquo;
+                    <span>Inconnu</span>
+                </blockquote>
+            </section>
+        </main>
+
+
+        <!-- Leaflet JS -->
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script src="scripts/groupav.js"></script>
+
+        <div class="footer-dark">
+            <footer>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>Services</h3>
+                            <ul>
+                                <li><a href="#">Web design</a></li>
+                                <li><a href="#">Development</a></li>
+                                <li><a href="#">Hosting</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6 col-md-3 item">
+                            <h3>About</h3>
+                            <ul>
+                                <li><a href="#">Company</a></li>
+                                <li><a href="#">Team</a></li>
+                                <li><a href="#">Careers</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 item text">
+                            <h3>Company Name</h3>
+                            <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum.</p>
+                        </div>
+                        <div class="col item social">
+                            <a href="#"><i class="icon ion-social-facebook"></i></a>
+                            <a href="#"><i class="icon ion-social-twitter"></i></a>
+                            <a href="#"><i class="icon ion-social-snapchat"></i></a>
+                            <a href="#"><i class="icon ion-social-instagram"></i></a>
+                        </div>
+                    </div>
+                    <p class="copyright">Company Name © 2024</p>
+                </div>
+            </footer>
+        </div>
+</body>
+</html>
