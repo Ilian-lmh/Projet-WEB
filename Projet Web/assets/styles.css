@@ -588,7 +588,6 @@ nav {
         background-color: #000;
         transform: scale(1.05);
     }
-/* HERO BANNER */
 /* HERO BANNER + PARALLAX + BOUTON */
 #hero {
     background-image: url('assets/detente_photo.jpg'); 
@@ -699,3 +698,89 @@ body.group-page main {
     .parag {
         font-family : Verdana  ;
     }
+
+body.group2-page {
+   background-color: #1a1a2e ;
+}
+.quote-block2 {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #ffd6e0;
+    border-radius: 16px; /* 👈 bord arrondi */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+    .quote-block2 blockquote {
+        font-size: 1.8rem;
+        font-style: italic;
+        color: #444;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.6;
+    }
+
+    .quote-block2 span {
+        display: block;
+        margin-top: 15px;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: #888;
+    }
+.map-style-selector2 {
+    margin: 40px auto;
+    text-align: center;
+}
+
+    .map-style-selector2 select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: #ffffff;
+        color: #333;
+        padding: 10px 40px 10px 16px;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        cursor: pointer;
+        position: relative;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,0 140,0 70,100' fill='%23666'%3E%3C/polygon%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 16px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .map-style-selector2 select:hover {
+            border-color: #1d3557;
+        }
+
+    .map-style-selector2 label {
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: #ffd6e0;
+        margin-bottom: 16px;
+    }
+#hero2 {
+    background-image: url('assets/detente_photo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    color: white;
+    text-align: center;
+    flex-direction: column;
+    margin-bottom: 120px;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px 40px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}

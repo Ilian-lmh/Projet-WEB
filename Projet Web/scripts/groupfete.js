@@ -1,4 +1,4 @@
-// Sous-destinations associÈes ‡ chaque destination principale
+Ôªø// Sous-destinations associ√©es √† chaque destination principale
 var subDestinations = {
     "Maroc": [
         { name: "Marrakech", coords: [31.63, -8.00] },
@@ -17,41 +17,41 @@ var subDestinations = {
 var subMarkers = []; // Pour garder une trace des sous-marqueurs
 var mainMarkers = []; // Marqueurs principaux pour suppression
 
-// DÈfinir les destinations principales
+// D√©finir les destinations principales
 var locations = [
-    { name: "Bali", coords: [-8.4095, 115.1889], zoom: 5 },
-    { name: "Maroc", coords: [31.7917, -7.0926], zoom: 5 },
-    { name: "Costa Rica", coords: [9.7489, -83.7534], zoom: 5 }
+    { name: "Ibiza", coords: [38.9089, 1.4320], zoom: 9 },
+    { name: "Paris", coords: [48.8566, 2.3522], zoom: 9 },
+    { name: "Rio de Janeiro", coords: [-22.9068, -43.1729], zoom: 9 }
 ];
 
-// CrÈer la carte avec taille rÈduite
+// Cr√©er la carte avec taille r√©duite
 var map = L.map('map').setView([20, 0], 2);
 
-// RÈduire la taille de la carte
+// R√©duire la taille de la carte
 var mapContainer = document.getElementById('map');
 mapContainer.style.position = 'relative';
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
+    attribution: '¬© OpenStreetMap contributors'
 }).addTo(map);
 
-// DÈfinir les tuiles disponibles
+// D√©finir les tuiles disponibles
 var tileLayers = {
     "osm": L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
+        attribution: '¬© OpenStreetMap contributors'
     }),
     "cartoLight": L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href=\"https://carto.com/attributions\">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 19
     }),
-    "thunderforest": L.tileLayer('https://tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=YOUR_API_KEY', {
-        attribution: '© Thunderforest, © OpenStreetMap contributors',
+    "thunderforest": L.tileLayer('https://tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=f2227bae3c12495787960bc8ea578f22', {
+        attribution: '¬© Thunderforest, ¬© OpenStreetMap contributors',
         maxZoom: 22
     })
 };
 
-// Ajouter la carte par dÈfaut
+// Ajouter la carte par d√©faut
 tileLayers["osm"].addTo(map);
 
 // Gestion du changement de style via le select
@@ -65,7 +65,7 @@ document.getElementById("mapStyle").addEventListener("change", function (e) {
         }
     });
 
-    // Ajouter le nouveau layer sÈlectionnÈ
+    // Ajouter le nouveau layer s√©lectionn√©
     tileLayers[selectedStyle].addTo(map);
 });
 
@@ -77,11 +77,11 @@ locations.forEach(function (location) {
     mainMarkers.push(marker);
 });
 
-// Fonction appelÈe au clic sur "Explorer"
+// Fonction appel√©e au clic sur "Explorer"
 window.zoomToLocation = function (lat, lng, zoom, buttonEl) {
     map.flyTo([lat, lng], zoom);
 
-    // Cacher le bouton "Explorer" cliquÈ (optionnel)
+    // Cacher le bouton "Explorer" cliqu√© (optionnel)
     if (buttonEl) {
         buttonEl.style.display = "none";
     }
@@ -126,15 +126,19 @@ document.getElementById("resetBtn").addEventListener("click", function () {
     subMarkers.forEach(m => map.removeLayer(m));
     subMarkers = [];
 
-    // RÈafficher tous les boutons "Explorer"
+    // R√©afficher tous les boutons "Explorer"
     document.querySelectorAll('.exploreBtn').forEach(btn => {
         btn.style.display = "inline-block";
     });
 
-    // RÈafficher les marqueurs principaux
+    // R√©afficher les marqueurs principaux
     mainMarkers.forEach(marker => marker.addTo(map));
 });
 // Scroll fluide vers la map
 document.getElementById("scrollToMap").addEventListener("click", function () {
-    document.querySelector(".map-wrapper").scrollIntoView({ behavior: "smooth" });
+    const target = document.querySelector(".map-style-selector2"); // ou .map-wrapper
+    const yOffset = 0; // ‚¨ÖÔ∏è remonte de 100px au-dessus de l'√©l√©ment
+    const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({ top: y, behavior: "smooth" });
 });
