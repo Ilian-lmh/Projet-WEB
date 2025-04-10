@@ -502,6 +502,7 @@ nav {
     width: 100%;
     max-width: 800px; /* ← limite la largeur */
     margin: 0 auto;
+    margin-bottom: 60px;
 }
 
 #map {
@@ -693,4 +694,8 @@ body.group-page main {
         font-size: 1.2rem;
         color: #4b6043; /* vert plante foncé */
         margin-bottom: 16px;
+    }
+
+    .parag {
+        font-family : Verdana  ;
     }

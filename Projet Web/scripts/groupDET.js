@@ -136,10 +136,9 @@ document.getElementById("resetBtn").addEventListener("click", function () {
 });
 // Scroll fluide vers la map
 document.getElementById("scrollToMap").addEventListener("click", function () {
-    const mapTarget = document.querySelector(".map-style-selector");
-    const yOffset = -60; // ← ajuste selon ton header ou marge
-    const y = mapTarget.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    const target = document.querySelector(".map-style-selector"); // ou .map-wrapper
+    const yOffset = 0; // ⬅️ remonte de 100px au-dessus de l'élément
+    const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
-    window.scrollTo({ top: y, behavior: 'smooth' });
-
+    window.scrollTo({ top: y, behavior: "smooth" });
 });
