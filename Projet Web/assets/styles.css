@@ -18,9 +18,8 @@ main {
 }
 
 h1 {
-    font-family: 'Dancing Script', cursive;
     text-align: center;
-    color: antiquewhite;
+    color : white;
     font-size: 6em;
     margin-top: 100px;
     text-shadow: 1px 3px 2px black;
@@ -36,7 +35,7 @@ h1 {
 
 h3 {
     text-align: center;
-    color: antiquewhite;
+    color: white;
     font-size: 3em;
     text-shadow: 1px 3px 2px black;
 }
@@ -157,17 +156,16 @@ body {
     cursor: pointer;
     transition: transform 0.3s ease;
 }
+.activite-card:hover {
+    transform: scale(1.03);
+}
 
-    .activite-card:hover {
-        transform: scale(1.03);
-    }
-
-    .activite-card img {
-        width: 100%;
-        height: 200px;
-        object-fit: cover;
-        display: block;
-    }
+.activite-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
 
 .activite-title {
     position: absolute;
@@ -238,18 +236,18 @@ body {
     text-align: center;
 }
 
-    #avis h2 {
-        font-size: 2rem;
-        color: #1d3557;
-        margin-bottom: 40px;
-    }
+#avis h2 {
+    font-size: 2rem;
+    color: darkred;
+    margin-bottom: 40px;
+}
 
 .testimonial {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
     background-color: #ffffff;
-    border-left: 6px solid #457b9d;
+    border-left: 6px solid darkred;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     border-radius: 8px;
 }
@@ -356,94 +354,13 @@ label, select {
 
 /*footer -------------------------------------------------------------------------*/
 
-.footer-dark {
-    padding: 50px 0;
-    color: #f0f9ff;
-    background-color: #282d32;
-}
 
-    .footer-dark h3 {
-        margin-top: 0;
-        margin-bottom: 12px;
-        font-weight: bold;
-        font-size: 16px;
-    }
-
-    .footer-dark ul {
-        padding: 0;
-        list-style: none;
-        line-height: 1.6;
-        font-size: 14px;
-        margin-bottom: 0;
-    }
-
-        .footer-dark ul a {
-            color: inherit;
-            text-decoration: none;
-            opacity: 0.6;
-        }
-
-            .footer-dark ul a:hover {
-                opacity: 0.8;
-            }
-
-@media (max-width: 767px) {
-    .footer-dark .item:not(.social) {
-        text-align: center;
-        padding-bottom: 20px;
-    }
-}
-
-.footer-dark .item.text {
-    margin-bottom: 36px;
-}
-
-@media (max-width: 767px) {
-    .footer-dark .item.text {
-        margin-bottom: 0;
-    }
-}
-
-.footer-dark .item.text p {
-    opacity: 0.6;
-    margin-bottom: 0;
-}
-
-.footer-dark .item.social {
-    text-align: center;
-}
-
-@media (max-width: 991px) {
-    .footer-dark .item.social {
-        text-align: center;
-        margin-top: 20px;
-    }
-}
-
-.footer-dark .item.social > a {
-    font-size: 20px;
-    width: 36px;
-    height: 36px;
-    line-height: 36px;
-    display: inline-block;
-    text-align: center;
-    border-radius: 50%;
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
-    margin: 0 8px;
-    color: #fff;
-    opacity: 0.75;
-}
-
-    .footer-dark .item.social > a:hover {
-        opacity: 0.9;
-    }
-
-.footer-dark .copyright {
-    text-align: center;
-    padding-top: 24px;
-    opacity: 0.3;
-    font-size: 13px;
-    margin-bottom: 0;
+footer {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+  background-color: darkred;
+  color: #fff;
 }
 
 /*fin footer----------------------------------------------------------------------------------------*/
@@ -483,12 +400,12 @@ nav {
 }
 
 .navbar {
-    background-color: #282d32 !important;
+    background-color: #ffffff !important;
 }
 
 .navbar-light .navbar-nav .nav-link,
 .navbar-light .navbar-brand {
-    color: #fff !important;
+    color: #000000 !important;
 }
 
 .navbar-light .navbar-toggler {
