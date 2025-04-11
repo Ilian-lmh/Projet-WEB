@@ -1,0 +1,62 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+main {
+    margin: 20px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 40px;
+}
+
+.devis-container {
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+}
+
+.devis-container input,
+.devis-container select,
+.devis-container textarea {
+    margin: 10px 0;
+}
+
+.btn-devis {
+    background-color: darkred;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.btn-devis:hover {
+    background-color: red;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ffc107;
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+    background-color: darkred;
+    color: #fff;
+    margin-top : 60px;
+}
+
+
