@@ -1,20 +1,26 @@
 document.addEventListener("DOMContentLoaded", function () {
     const activities = [
-        { name: "Balade en Limousine", price: 200, image: "assets/limousine.jpg" },
-        { name: "Bouteille de Champagne", price: 100, image: "assets/champagne.png" },
-        { name: "Entree VIP en Club", price: 150, image: "assets/club.jpeg" },
-        { name: "Diner gastronomique", price: 80, image: "assets/diner.jpg" },
-        { name: "Seance SPA de luxe", price: 120, image: "assets/spa.jpg" }
+        { name: "Balade en Limousine", price: 2000, image: "assets/limousine.jpg" },
+        { name: "Loge au Parc Des Princes", price: 30000, image: "assets/psg.jpg" },
+        { name: "Entree VIP à l'Arc", price: 15000, image: "assets/club.jpeg" },
+        { name: "Diner gastronomique", price: 2000, image: "assets/diner.jpg" },
+        { name: "Bateau mouche privatisé", price: 5000, image: "assets/bateau.jpg" },
+        { name: "Séance SPA de luxe", price: 1200, image: "assets/spa.jpg" }
     ];
 
     const activitiesContainer = document.getElementById("activities-container");
     const totalPriceElement = document.getElementById("total-price");
+    const payerButton = document.getElementById("payer-button");
+
     let totalPrice = 0;
 
     function updateTotal() {
-        totalPrice = Array.from(document.querySelectorAll(".activity-checkbox:checked"))
-            .reduce((sum, checkbox) => sum + parseInt(checkbox.dataset.price), 0);
-        totalPriceElement.textContent = `${totalPrice}euro`;
+        const checkedBoxes = Array.from(document.querySelectorAll(".activity-checkbox:checked"));
+        totalPrice = checkedBoxes.reduce((sum, checkbox) => sum + parseInt(checkbox.dataset.price), 0);
+        totalPriceElement.textContent = `${totalPrice}€`;
+
+        // Affiche ou cache le bouton "Payer"
+        payerButton.style.display = totalPrice > 0 ? "inline-block" : "none";
     }
 
     activities.forEach((activity, index) => {
@@ -38,10 +44,10 @@ document.addEventListener("DOMContentLoaded", function () {
         image.src = activity.image;
         image.alt = activity.name;
         image.classList.add("activity-image");
-        image.onerror = () => { image.src = "images/default.jpg"; }; // Fallback image
+        image.onerror = () => { image.src = "images/default.jpg"; };
 
         const label = document.createElement("label");
-        label.textContent = `${activity.name} - ${activity.price}�`;
+        label.textContent = `${activity.name} - ${activity.price}€`;
         label.setAttribute("for", `activity-${index}`);
 
         leftDiv.appendChild(checkbox);
@@ -61,4 +67,11 @@ document.addEventListener("DOMContentLoaded", function () {
         activityDiv.appendChild(button);
         activitiesContainer.appendChild(activityDiv);
     });
+
+    // Clique sur le bouton "Payer"
+    payerButton.addEventListener("click", () => {
+        window.location.href = "paiement.html";
+    });
+
+    updateTotal(); // Pour initialiser correctement
 });
