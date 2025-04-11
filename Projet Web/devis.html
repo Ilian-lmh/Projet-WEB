@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devis 1 min EVG</title>
+
+    <!-- Feuilles de style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="assets/devis.css"> <!-- Nouveau fichier CSS spécifique -->
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-light fixed-top">
+        <a class="navbar-brand" href="index.html">EVG en 1 minute</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="groupeav.html">Aventure</a></li>
+                <li class="nav-item"><a class="nav-link" href="groupeDET.html">Detente</a></li>
+                <li class="nav-item"><a class="nav-link" href="groupfete.html">Fete</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Titre et formulaire -->
+    <div class="devis-container">
+        <h1><span style="color:darkred;"> Devis EVG</span></h1>
+
+        <form id="devis-form">
+            <div class="form-row">
+                <div class="col"><input type="date" class="form-control" placeholder="Date de départ"></div>
+                <div class="col"><input type="date" class="form-control" placeholder="Date de retour"></div>
+            </div>
+            <div class="form-row">
+                <div class="col"><input type="text" class="form-control" placeholder="Lieu de depart"></div>
+                <div class="col">
+                    <select class="form-control">
+                        <option>Destination</option>
+                        <option>Ibiza</option>
+                        <option>Bangkok</option>
+                        <option>Rio de Janeiro</option>
+                        <option>Queenstown</option>
+                        <option>Le cap</option>
+                        <option>Interlaken</option>
+                        <option>Bali</option>
+                        <option>Maroc</option>
+                        <option>Costa Rica</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="col">
+                    <select class="form-control">
+                        <option>Participants</option>
+                        <option>5</option>
+                        <option>10</option>
+                        <option>15</option>
+                        <option>20+</option>
+                    </select>
+                </div>
+                <div class="col">
+                    <select class="form-control">
+                        <option>Budget</option>
+                        <option>150</option>
+                        <option>250</option>
+                        <option>500</option>
+                        <option>1000+</option>
+                    </select>
+                </div>
+            </div>
+
+            <textarea class="form-control" rows="3" placeholder="D'autres envies ? Destination ? Ambiance ?"></textarea>
+            <button type="submit" class="btn btn-devis btn-block mt-3">Envoyer</button>
+        </form>
+        <div id="confirmation-message" class="mt-4"></div>
+
+    </div>
+
+    <!-- Scripts Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts/devis.js" charset="UTF-8"></script>
+    <footer>
+        <p>C 2k25 Ilian, lucas la merde, Mahe</p>
+    </footer>
+</body>
+</html>
