@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte Interactive</title>
+    <link rel="stylesheet" href="assets/styles.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body class="group4-page">
+        <main>
+
+            <!-- Menu style de carte -->
+            <div class="map-style-selector4">
+                <label for="mapStyle">Choisissez un style :</label>
+                <select id="mapStyle">
+                    <option value="cartoLight">Carto (Clair)</option>
+                    <option value="osm">OpenStreetMap (Classique)</option>
+                    <option value="thunderforest">Thunder Forest</option>
+                </select>
+            </div>
+
+            <!-- Map + boutons -->
+            <div class="map-wrapper">
+                <div id="map"></div>
+                <div id="map-buttons" style="display: none; text-align: center; margin-top: 20px;">
+                    <button id="bookBtn" style="display: none;">Réserver</button>
+                    <button id="resetBtn" style="display: none;">Réinitialiser</button>
+                </div>
+            </div>
+        </main>
+
+
+        <!-- Leaflet JS -->
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script src="scripts/destinations.js"></script>
+
+        <footer>
+            <p>© 2k25 Lucas, mahe la pute et ilian la salope</p>
+        </footer>
+</body>
+</html>

@@ -17,6 +17,8 @@
                 <h2>Quel endroit vous fait r&ecirc;ver pour faire la f&ecirc;te ?</h2>
                 <button id="scrollToMap">Explorer la carte</button>
             </div>
+
+
         </section>
 
         <main>
@@ -30,21 +32,21 @@
             </section>
 
             <!-- Menu style de carte -->
-            <div class="map-style-selector2">
+            <div class="map-style-selector2" >
                 <label for="mapStyle">Choisissez un style :</label>
                 <select id="mapStyle">
-                    <option value="osm">OpenStreetMap (Classique)</option>
                     <option value="cartoLight">Carto (Clair)</option>
+                    <option value="osm">OpenStreetMap (Classique)</option>
                     <option value="thunderforest">Thunder Forest</option>
                 </select>
             </div>
 
             <!-- Map + boutons -->
-            <div class="map-wrapper">
+            <div class="map-wrapper" id="maps">
                 <div id="map"></div>
                 <div id="map-buttons" style="display: none; text-align: center; margin-top: 20px;">
-                    <button id="bookBtn" style="display: none;">Réserver</button>
-                    <button id="resetBtn" style="display: none;">Réinitialiser</button>
+                        <button id="bookBtn" style="display: none;">Réserver</button>
+                        <button id="resetBtn" style="display: none;">Réinitialiser</button>
                 </div>
             </div>
             <section class="quote-block2">

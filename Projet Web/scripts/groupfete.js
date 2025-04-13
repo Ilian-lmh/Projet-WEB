@@ -1,8 +1,18 @@
-﻿// Sous-destinations associées à chaque destination principale
+﻿const reservationLinks = {
+    "Ibiza": "ibiza.html",
+    "Paris": "paris.html",
+    "Rio de Janeiro": "rio.html",
+}
+
+// Sous-destinations associées à chaque destination principale
 var subDestinations = {
-    "Maroc": [
-        { name: "Marrakech", coords: [31.63, -8.00] },
-        { name: "Essaouira", coords: [31.51, -9.77] }
+    "Paris": [
+        { name: "Balade en Limousine", coords: [48.8656, 2.3212] },
+        { name: "Loge au Parc Des Princes", coords: [48.8414, 2.2530] },
+        { name: "Entrée VIP à l’Arc", coords: [48.8738, 2.2950] },
+        { name: "Dîner gastronomique", coords: [48.8650, 2.3287] },
+        { name: "Bateau mouche privatisé", coords: [48.8642, 2.3030] },
+        { name: "Séance SPA de luxe ", coords: [48.8669, 2.3056] }
     ],
     "Costa Rica": [
         { name: "Arenal", coords: [10.47, -84.65] },
@@ -20,7 +30,7 @@ var mainMarkers = []; // Marqueurs principaux pour suppression
 // Définir les destinations principales
 var locations = [
     { name: "Ibiza", coords: [38.9089, 1.4320], zoom: 9 },
-    { name: "Paris", coords: [48.8566, 2.3522], zoom: 9 },
+    { name: "Paris", coords: [48.8566, 2.3522], zoom: 12 },
     { name: "Rio de Janeiro", coords: [-22.9068, -43.1729], zoom: 9 }
 ];
 
@@ -52,7 +62,7 @@ var tileLayers = {
 };
 
 // Ajouter la carte par défaut
-tileLayers["osm"].addTo(map);
+tileLayers["cartoLight"].addTo(map);
 
 // Gestion du changement de style via le select
 document.getElementById("mapStyle").addEventListener("change", function (e) {
@@ -91,7 +101,19 @@ window.zoomToLocation = function (lat, lng, zoom, buttonEl) {
 
     // Afficher les autres boutons
     document.getElementById("map-buttons").style.display = "block";
-    document.getElementById("bookBtn").style.display = "inline-block";
+    const bookBtn = document.getElementById("bookBtn");
+    bookBtn.style.display = "inline-block";
+
+    // Récupérer la destination
+    const loc = locations.find(loc => loc.coords[0] === lat && loc.coords[1] === lng);
+    if (loc && reservationLinks[loc.name]) {
+        bookBtn.onclick = () => {
+            window.location.href = reservationLinks[loc.name];
+        };
+    } else {
+        bookBtn.onclick = null;
+    }
+
     document.getElementById("resetBtn").style.display = "inline-block";
 
 
@@ -101,10 +123,6 @@ window.zoomToLocation = function (lat, lng, zoom, buttonEl) {
     // Supprimer les anciens sous-marqueurs
     subMarkers.forEach(marker => map.removeLayer(marker));
     subMarkers = [];
-
-    // Trouver le nom de la destination
-    const loc = locations.find(loc => loc.coords[0] === lat && loc.coords[1] === lng);
-    if (!loc) return;
 
     const subs = subDestinations[loc.name];
     if (!subs) return;
@@ -136,9 +154,6 @@ document.getElementById("resetBtn").addEventListener("click", function () {
 });
 // Scroll fluide vers la map
 document.getElementById("scrollToMap").addEventListener("click", function () {
-    const target = document.querySelector(".map-style-selector2"); // ou .map-wrapper
-    const yOffset = 0; // ⬅️ remonte de 100px au-dessus de l'élément
-    const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-    window.scrollTo({ top: y, behavior: "smooth" });
+    document.getElementById("maps").scrollIntoView({ behavior: "smooth", block: "start" });
 });
+

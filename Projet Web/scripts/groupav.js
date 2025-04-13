@@ -1,4 +1,10 @@
-﻿// Sous-destinations associées à chaque destination principale
+﻿const reservationLinks = {
+    "Moab": "moab.html",
+    "Cap Town": "cap.html",
+    "Intarlaken": "intarlaken.html",
+}
+
+// Sous-destinations associées à chaque destination principale
 var subDestinations = {
     "Maroc": [
         { name: "Marrakech", coords: [31.63, -8.00] },
@@ -52,7 +58,7 @@ var tileLayers = {
 };
 
 // Ajouter la carte par défaut
-tileLayers["osm"].addTo(map);
+tileLayers["cartoLight"].addTo(map);
 
 // Gestion du changement de style via le select
 document.getElementById("mapStyle").addEventListener("change", function (e) {
@@ -68,7 +74,6 @@ document.getElementById("mapStyle").addEventListener("change", function (e) {
     // Ajouter le nouveau layer sélectionné
     tileLayers[selectedStyle].addTo(map);
 });
-
 
 // Ajouter les marqueurs pour les destinations principales
 locations.forEach(function (location) {
@@ -91,20 +96,24 @@ window.zoomToLocation = function (lat, lng, zoom, buttonEl) {
 
     // Afficher les autres boutons
     document.getElementById("map-buttons").style.display = "block";
-    document.getElementById("bookBtn").style.display = "inline-block";
+    const bookBtn = document.getElementById("bookBtn");
+    bookBtn.style.display = "inline-block";
+
+    // Récupérer la destination
+    const loc = locations.find(loc => loc.coords[0] === lat && loc.coords[1] === lng);
+    if (loc && reservationLinks[loc.name]) {
+        bookBtn.onclick = () => {
+            window.location.href = reservationLinks[loc.name];
+        };
+    } else {
+        bookBtn.onclick = null;
+    }
+
     document.getElementById("resetBtn").style.display = "inline-block";
-
-
-
-
 
     // Supprimer les anciens sous-marqueurs
     subMarkers.forEach(marker => map.removeLayer(marker));
     subMarkers = [];
-
-    // Trouver le nom de la destination
-    const loc = locations.find(loc => loc.coords[0] === lat && loc.coords[1] === lng);
-    if (!loc) return;
 
     const subs = subDestinations[loc.name];
     if (!subs) return;
@@ -136,9 +145,5 @@ document.getElementById("resetBtn").addEventListener("click", function () {
 });
 // Scroll fluide vers la map
 document.getElementById("scrollToMap").addEventListener("click", function () {
-    const target = document.querySelector(".map-style-selector3"); // ou .map-wrapper
-    const yOffset = 0; // ⬅️ remonte de 100px au-dessus de l'élément
-    const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-    window.scrollTo({ top: y, behavior: "smooth" });
+    document.getElementById("maps").scrollIntoView({ behavior: "smooth", block: "start" });
 });

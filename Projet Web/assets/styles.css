@@ -420,6 +420,7 @@ nav {
     max-width: 800px; /* ← limite la largeur */
     margin: 0 auto;
     margin-bottom: 60px;
+
 }
 
 #map {
@@ -761,4 +762,44 @@ body.group-page3 {
         font-weight: bold;
         font-size: 1.2rem;
         margin-bottom: 16px;
+    }
+
+body.group4-page {
+    background-color: #ffd6e0;
+}
+
+.map-style-selector4 {
+    margin: 40px auto;
+    text-align: center;
+}
+
+    .map-style-selector4 select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: #ffffff;
+        color: #333;
+        padding: 10px 40px 10px 16px;
+        font-size: 16px;
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        cursor: pointer;
+        position: relative;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 140 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cpolygon points='0,0 140,0 70,100' fill='%23666'%3E%3C/polygon%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 12px center;
+        background-size: 16px;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .map-style-selector4 select:hover {
+            border-color: #1d3557;
+        }
+
+    .map-style-selector4 label {
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-bottom: 16px;
+        color: #e75874;
     }
