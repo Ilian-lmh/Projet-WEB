@@ -14,13 +14,21 @@ var subDestinations = {
         { name: "Bateau mouche privatisé", coords: [48.8642, 2.3030] },
         { name: "Séance SPA de luxe ", coords: [48.8669, 2.3056] }
     ],
-    "Costa Rica": [
-        { name: "Arenal", coords: [10.47, -84.65] },
-        { name: "Tamarindo", coords: [10.30, -85.84] }
+    "Ibiza": [
+        { name: "📍 Pacha Ibiza, Marina Botafoch", coords: [38.9171, 1.4459] },
+        { name: "Croisière privée avec open bar📍 Départ souvent depuis Marina Ibiza", coords: [38.9098, 1.4429] },
+        { name: "📍 Cala Bassa Beach Club (CBbC)", coords: [38.9630, 1.2368] },
+        { name: "Pool party au Ushuaïa", coords: [38.8814, 1.4052] },
+        { name: "Excursion en jetski autour de l'île📍 Point de départ souvent à San Antonio", coords: [38.9805, 1.3006] },
+        { name: "Spa détente face à la mer Hacienda Na Xamena", coords: [39.0873, 1.3097] }
     ],
-    "Bali": [
-        { name: "Ubud", coords: [-8.5069, 115.2625] },
-        { name: "Kuta", coords: [-8.7177, 115.1682] }
+    "Rio de Janeiro": [
+        { name: "Tour en hélicoptère autour du Christ Rédempteur📍 Helipad de Lagoa ou Sugarloaf Heliport", coords: [−22.9646, −43.2178] },
+        { name: "Soirée VIP au Copacabana Palace📍 Copacabana Palace", coords: [−22.9666, −43.1791] },
+        { name: "Cours de samba privé avec des pros📍 Ginga Tropical", coords: [−22.9126, −43.1780] },
+        { name: "Excursion en yacht autour des îles📍 Marina da Glória", coords: [−22.9192, −43.1686] },
+        { name: "Session de surf avec moniteur à Ipanema📍 Plage d’Ipanema ", coords: [−22.9836, −43.2066] },
+        { name: "BBQ brésilien au bord de la plage📍 Barra da Tijuca", coords: [−23.0036, −43.3653] }
     ]
 };
 
@@ -29,7 +37,7 @@ var mainMarkers = []; // Marqueurs principaux pour suppression
 
 // Définir les destinations principales
 var locations = [
-    { name: "Ibiza", coords: [38.9089, 1.4320], zoom: 9 },
+    { name: "Ibiza", coords: [38.9089, 1.4320], zoom: 10 },
     { name: "Paris", coords: [48.8566, 2.3522], zoom: 12 },
     { name: "Rio de Janeiro", coords: [-22.9068, -43.1729], zoom: 9 }
 ];
