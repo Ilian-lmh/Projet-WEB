@@ -6,17 +6,33 @@
 
 // Sous-destinations associées à chaque destination principale
 var subDestinations = {
-    "Maroc": [
-        { name: "Marrakech", coords: [31.63, -8.00] },
-        { name: "Essaouira", coords: [31.51, -9.77] }
-    ],
+    "Chefchaouen": [
+            {name: "Bain traditionnel au hammam",
+            coords: [35.1685, -5.2641] },
+            { name: "Thé à la menthe sur les toits",
+                coords: [35.1691, -5.2638]},
+            { name: "Visite guidée de la vieille ville",
+                coords: [35.1687, -5.2634]  },
+            {name: "Séance de yoga en montagne",
+                coords: [35.1727, -5.2732]  },
+            {name: "Balade à Akchour",
+                coords: [35.2502, -5.2255]}
+        ],
+
     "Costa Rica": [
-        { name: "Arenal", coords: [10.47, -84.65] },
-        { name: "Tamarindo", coords: [10.30, -85.84] }
+        { name: "Sources chaudes naturelles à La Fortuna", coords: [10.4700, -84.6450] },
+        { name: "Cours de yoga sur la plage à Puerto Viejo", coords: [9.6550, -82.7541] },
+        { name: "Massage dans la jungle", coords: [10.3026, -84.7950] },
+        { name: "Surf tranquille à Santa Teresa", coords: [9.6563, -85.1603] },
+        { name: "Randonnée dans le parc national de Corcovado", coords: [8.5464, -83.5912] }
     ],
+
     "Bali": [
-        { name: "Ubud", coords: [-8.5069, 115.2625] },
-        { name: "Kuta", coords: [-8.7177, 115.1682] }
+        { name: "Massage balinais traditionnel", coords: [-8.5074, 115.2605] },
+        { name: "Cours de yoga au lever du soleil", coords: [-8.5062, 115.2627] },
+        { name: "Session de méditation guidée à Ubud", coords: [-8.5195, 115.2622] },
+        { name: "Découverte des rizières en vélo", coords: [-8.4317, 115.2799] },
+        { name: "Bain floral dans une villa spa", coords: [-8.5052, 115.2650] }
     ]
 };
 
@@ -25,9 +41,9 @@ var mainMarkers = []; // Marqueurs principaux pour suppression
 
 // Définir les destinations principales
 var locations = [
-    { name: "Bali", coords: [-8.4095, 115.1889], zoom: 5 },
-    { name: "Maroc", coords: [31.7917, -7.0926], zoom: 5 },
-    { name: "Costa Rica", coords: [9.7489, -83.7534], zoom: 5 }
+    { name: "Bali", coords: [-8.4095, 115.1889], zoom: 11 },
+    { name: "Chefchaouen", coords: [35.1688, -5.2636], zoom: 13 },
+    { name: "Costa Rica", coords: [9.7489, -83.7534], zoom: 8 }
 ];
 
 // Créer la carte avec taille réduite
