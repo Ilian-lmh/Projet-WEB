@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const activities = [
         { name: "Parapente au-dessus des Alpes", price: 2700, image: "assets/interlaken/paragliding.jpg" },
         { name: "Bungee Jump sur le lac", price: 2300, image: "assets/interlaken/bungee.jpg" },
-        { name: "Ski extrême hors-piste", price: 3500, image: "assets/interlaken/ski.jpg" },
+        { name: "Ski extrÃªme hors-piste", price: 3500, image: "assets/interlaken/ski.jpg" },
         { name: "Via Ferrata et escalade", price: 2000, image: "assets/interlaken/escalade.jpg" },
         { name: "Rafting dans les gorges suisses", price: 1800, image: "assets/interlaken/rafting.jpg" }
     ];
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function updateTotal() {
         const checkedBoxes = Array.from(document.querySelectorAll(".activity-checkbox:checked"));
         totalPrice = checkedBoxes.reduce((sum, checkbox) => sum + parseInt(checkbox.dataset.price), 0);
-        totalPriceElement.textContent = `${totalPrice}€`;
+        totalPriceElement.textContent = `${totalPrice}â‚¬`;
 
         payerButton.style.display = totalPrice > 0 ? "inline-block" : "none";
     }
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         image.onerror = () => { image.src = "images/default.jpg"; };
 
         const label = document.createElement("label");
-        label.textContent = `${activity.name} - ${activity.price}€`;
+        label.textContent = `${activity.name} - ${activity.price}â‚¬`;
         label.setAttribute("for", `activity-${index}`);
 
         leftDiv.appendChild(checkbox);
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     payerButton.addEventListener("click", () => {
-        window.location.href = "paiement.html";
+        window.location.href = "../paiement.html";
     });
 
     updateTotal();
