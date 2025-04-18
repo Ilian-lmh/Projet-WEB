@@ -37,6 +37,8 @@ Design responsive et stylé : Mise en page centrée avec des styles adaptés pou
 Boutons personnalisés avec effets au survol
 
 
+
+
 EXPLICATION D'ILIAN :
 
 Les group.js permettent plusieurs choses, ils agissent directement sur les pages groupfete.html, groupav.html et groupDet.html :
