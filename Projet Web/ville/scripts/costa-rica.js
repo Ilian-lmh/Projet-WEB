@@ -65,7 +65,7 @@
     });
 
     payerButton.addEventListener("click", () => {
-        window.location.href = "ville/paiement.html";
+        window.location.href = "../paiement.html";
     });
 
     updateTotal();
