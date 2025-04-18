@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Clique sur le bouton "Payer"
     payerButton.addEventListener("click", () => {
-        window.location.href = "paiement.html";
+        window.location.href = "../paiement.html";
     });
 
     updateTotal(); // Pour initialiser correctement
