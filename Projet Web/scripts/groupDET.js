@@ -1,7 +1,7 @@
 ﻿const reservationLinks = {
-    "Bali": "../ville/bali.html",
-    "Chefchaouen": "../ville/chefchaouen.html",
-    "Costa Rica": "../ville/costa-rica.html",
+    "Bali": "../Projet Web/ville/bali.html",
+    "Chefchaouen": "../Projet Web/ville/chefchaouen.html",
+    "Costa Rica": "../Projet Web/ville/costa-rica.html",
 }
 
 // Sous-destinations associées à chaque destination principale
