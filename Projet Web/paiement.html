@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -11,10 +11,11 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
+            justify-content: flex-start;
+            padding-top: 40px;
+            min-height: 100vh;
             margin: 0;
-            overflow: hidden;
+            text-align: center;
         }
 
         .card {
@@ -23,21 +24,10 @@
             width: 320px;
             height: 200px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-            position: relative;
             padding: 20px;
-            margin-bottom: 50px;
             animation: slideIn 1.2s ease-out;
+            margin-bottom: 30px;
         }
-
-            .card::before {
-                content: '';
-                position: absolute;
-                top: 20px;
-                left: 20px;
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-            }
 
             .card h3 {
                 margin: 0;
@@ -50,26 +40,6 @@
                 color: #ddd;
             }
 
-        @keyframes rotate {
-            0% {
-                transform: rotate(0deg);
-            }
-
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
         .circle-loader {
             width: 100px;
             height: 100px;
@@ -78,6 +48,10 @@
             border-radius: 50%;
             animation: spin 2s linear infinite;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
         }
 
         @keyframes spin {
@@ -91,12 +65,9 @@
         }
 
         .checkmark {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            font-size: 48px;
+            font-size: 40px;
             color: #00ff99;
+            transform: scale(0);
             transition: transform 0.5s ease-in-out;
         }
 
@@ -106,13 +77,57 @@
         }
 
         .success .checkmark {
-            transform: translate(-50%, -50%) scale(1);
+            transform: scale(1);
         }
 
         h1 {
+            margin-top: 0;
+            font-size: 26px;
+        }
+
+        .btn-return {
             margin-top: 30px;
-            font-size: 28px;
-            text-align: center;
+            padding: 12px 24px;
+            border: none;
+            background: #00ff99;
+            color: #24243e;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.5s ease-in, transform 0.3s;
+        }
+
+            .btn-return:hover {
+                transform: scale(1.05);
+                background-color: #00e68a;
+            }
+
+        .btn-show {
+            opacity: 1;
+        }
+
+        .qr-container {
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in;
+        }
+
+        .qr-visible {
+            opacity: 1;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-40px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -123,20 +138,34 @@
         <p>Nom: Groupe Fête & Luxe</p>
         <p>Expire: 08/29</p>
     </div>
+
     <div class="circle-loader" id="loader">
         <div class="checkmark" id="check">✔</div>
     </div>
+
     <h1 id="message">Paiement en cours...</h1>
 
+    <div class="qr-container" id="qr">
+        <p>Scanne ce QR Code pour accéder à ton billet 🎟️</p>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=billet.html" alt="QR Code vers billet" />
+    </div>
+
+    <button class="btn-return" id="returnBtn" onclick="window.location.href='../index.html'">Retour à l'accueil</button>
+
     <script>
-    setTimeout(() => {
+        setTimeout(() => {
             const loader = document.getElementById("loader");
             const check = document.getElementById("check");
             const message = document.getElementById("message");
+            const returnBtn = document.getElementById("returnBtn");
+            const qr = document.getElementById("qr");
 
             loader.classList.add("success");
             message.textContent = "Paiement réussi ! Merci ✨";
-        }, 3500);</script>
+
+            returnBtn.classList.add("btn-show");
+            qr.classList.add("qr-visible");
+        }, 3500);
+    </script>
 </body>
 </html>
-
