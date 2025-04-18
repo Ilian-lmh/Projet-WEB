@@ -1,13 +1,13 @@
 ﻿const reservationLinks = {
-    "Ibiza": "ibiza.html",
-    "Paris": "paris.html",
-    "Rio de Janeiro": "rio.html",
-    "Moab": "moab.html",
-    "Cap Town": "cap.html",
-    "Intarlaken": "intarlaken.html",
-    "Bali": "bali.html",
-    "Maroc": "maroc.html",
-    "Costa Rica": "costa.html",
+    "Ibiza": "../Projet Web/ville/ibiza.html",
+    "Paris": "../Projet Web/ville/paris.html",
+    "Rio de Janeiro": "../Projet Web/ville/rio.html",
+    "Moab": "../Projet Web/ville/moab.html",
+    "Cap Town": "../Projet Web/ville/cap.html",
+    "Intarlaken": "../Projet Web/ville/intarlaken.html",
+    "Bali": "../Projet Web/ville/bali.html",
+    "Maroc": "../Projet Web/ville/maroc.html",
+    "Costa Rica": "../Projet Web/ville/costa.html",
 }
 
 // Sous-destinations associées à chaque destination principale
