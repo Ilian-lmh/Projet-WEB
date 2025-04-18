@@ -1,0 +1,79 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: url('assets/bali/bali.jpg') no-repeat center center fixed;
+    margin: 0;
+    background-size: cover;
+    padding: 30px;
+    color: #2d2d2d;
+    text-align: center;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    background: linear-gradient(to top, #ffe29f, #ffa99f);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    color: #ff7e5f;
+    margin-bottom: 0;
+}
+
+.activities h2 {
+    color: #ff7e5f;
+    margin-top: 30px;
+}
+
+.activity-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff4ec;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(255, 126, 95, 0.15);
+    transition: transform 0.3s;
+}
+
+    .activity-item:hover {
+        transform: scale(1.02);
+    }
+
+.activity-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.activity-button, .payer-button {
+    background-color: #ff7e5f;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+    .activity-button:hover, .payer-button:hover {
+        background-color: #e96d50;
+    }
+
+.total {
+    margin-top: 20px;
+    font-size: 1.6em;
+    color: #ff7e5f;
+}
+
+.activity-checkbox {
+    display: none;
+}
