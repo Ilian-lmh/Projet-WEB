@@ -1,7 +1,7 @@
 ﻿const reservationLinks = {
-    "Ibiza": "ibiza.html",
-    "Paris": "paris.html",
-    "Rio de Janeiro": "rio.html",
+    "Ibiza": "../ville/ibiza.html",
+    "Paris": "../ville/paris.html",
+    "Rio de Janeiro": "../ville/rio.html",
 }
 
 // Sous-destinations associées à chaque destination principale
