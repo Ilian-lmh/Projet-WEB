@@ -1,7 +1,7 @@
 ﻿const reservationLinks = {
-    "Moab": "moab.html",
-    "Cap town": "capetown.html",
-    "Interlaken": "interlaken.html",
+    "Moab": "../ville/moab.html",
+    "Cap town": "../ville/capetown.html",
+    "Interlaken": "../ville/interlaken.html",
 }
 
 // Sous-destinations associées à chaque destination principale
