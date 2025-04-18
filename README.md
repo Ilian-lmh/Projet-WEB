@@ -57,6 +57,28 @@ Ces script gère une carte interactive Leaflet avec des destinations principales
 
 EXPLICATION DE LUCAS 
 
+Pages de réservation par ville (HTML / CSS / JS) 
+J’ai développé l’ensemble des pages spécifiques aux destinations. Chaque ville dispose de sa propre page HTML, CSS et JavaScript, offrant une interface unique et claire pour choisir des activités.
+
+Ajout dynamique d’activités : L’utilisateur peut sélectionner les activités proposées via des boutons dédiés, chaque clic les ajoute à une liste de réservation.
+
+Calcul automatique du total : Le prix total s’actualise en temps réel à chaque ajout ou suppression, offrant une transparence immédiate sur le coût final.
+
+Interface utilisateur intuitive : Chaque activité est présentée sous forme de carte avec nom, image, prix et bouton d’ajout. Le design a été pensé pour être à la fois esthétique et fonctionnel.
+
+Code séparé par ville : Pour plus de clarté et de maintenabilité, j’ai choisi de faire un fichier HTML, CSS et JS par ville, permettant une adaptation fine du contenu et du style selon l’ambiance de chaque destination.
+
+Page de paiement – paiement.html
+J’ai aussi développé une page de confirmation de paiement interactive, simulant une transaction réussie :
+
+Animation d’état de paiement avec un anneau animé suivi d’un check ✅ et d’un message "Paiement réussi ! Merci ✨"
+
+Ajout d’un QR code dynamique généré via une API pour simuler l’accès au billet électronique.
+
+Retour vers l’accueil via un bouton, et design responsive, avec corrections des bugs d’alignement et d’animation rencontrés en cours de route.
+
+
+
 
 Notre projet n'a pas besoin d'installation particulière.
 
