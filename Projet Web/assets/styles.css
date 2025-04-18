@@ -1,3 +1,4 @@
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
@@ -44,7 +45,7 @@ h3 {
 }
 
 #imagePrincipale {
-    padding-top: 60px; /* déjà présent, c'est bien ! */
+    padding-top: 100px; /* déjà présent, c'est bien ! */
     background-size: cover;
     height: 799px;
     background-position: center;
@@ -96,12 +97,7 @@ h3 {
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    background-color: #fdfdfd;
-    color: #333;
-}
+
 
 
 .extra-info {
@@ -364,56 +360,14 @@ footer {
   padding: 50px;
   background-color: darkred;
   color: #fff;
+  
 }
 
 /*fin footer----------------------------------------------------------------------------------------*/
 
 
 /*navbar------------------------------------------------------------------------*/
-.navbar {
-    margin-bottom: 20px;
-}
 
-nav {
-    overflow: hidden;
-    background-color: #f0f9ff;
-    position: fixed;
-    width: 100%;
-    opacity: 0.9;
-}
-
-
-.navbar-nav .nav-item {
-    margin-left: 20px;
-}
-
-.navbar-nav .nav-link {
-    color: #f0f9ff;
-}
-.navbar-nav .nav-link:hover {
-    color: #f0f9ff;
-}
-
-
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000; /* Assure que la navbar reste au-dessus des autres éléments */
-}
-
-.navbar {
-    background-color: #ffffff !important;
-}
-
-.navbar-light .navbar-nav .nav-link,
-.navbar-light .navbar-brand {
-    color: #000000 !important;
-}
-
-.navbar-light .navbar-toggler {
-    border-color: #fff;
-}
 
 /*FIN navbar ------------------------------------------*/
 
@@ -806,3 +760,34 @@ body.group4-page {
         margin-bottom: 16px;
         color: #e75874;
     }
+
+.custom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1d3557;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.header-nav a {
+    color : white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.header-nav a:hover {
+    color: #e63946;
+}
