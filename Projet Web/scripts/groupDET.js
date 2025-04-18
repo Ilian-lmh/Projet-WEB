@@ -1,7 +1,7 @@
 ﻿const reservationLinks = {
     "Bali": "bali.html",
-    "Maroc": "maroc.html",
-    "Costa Rica": "costa.html",
+    "Chefchaouen": "chefchaouen.html",
+    "Costa Rica": "costa-rica.html",
 }
 
 // Sous-destinations associées à chaque destination principale
@@ -127,10 +127,6 @@ window.zoomToLocation = function (lat, lng, zoom, buttonEl) {
     }
 
     document.getElementById("resetBtn").style.display = "inline-block";
-
-
-
-
 
     // Supprimer les anciens sous-marqueurs
     subMarkers.forEach(marker => map.removeLayer(marker));

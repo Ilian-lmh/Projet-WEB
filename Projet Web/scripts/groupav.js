@@ -1,7 +1,7 @@
 ﻿const reservationLinks = {
     "Moab": "moab.html",
-    "Cap Town": "cap.html",
-    "Intarlaken": "intarlaken.html",
+    "Cap town": "capetown.html",
+    "Interlaken": "interlaken.html",
 }
 
 // Sous-destinations associées à chaque destination principale
@@ -20,7 +20,7 @@ var subDestinations = {
         { name: " Muizenberg Beach", coords: [-34.1067, 18.4696] },
         { name: "Cape Canopy Tour", coords: [-34.0872, 19.0257] }
     ],
-    "Intarlaken": [
+    "Interlaken": [
         { name: "Paragliding Interlaken", coords: [46.6886, 7.8496] },
         { name: "Stockhorn Bungee", coords: [46.7167, 7.5670] },
         { name: "Hintere Lauterbrunnen vallée", coords: [46.5380, 7.9094] },
@@ -36,7 +36,7 @@ var mainMarkers = []; // Marqueurs principaux pour suppression
 var locations = [
     { name: "Moab", coords: [38.5733, -109.5498], zoom: 9 },
     { name: "Cap town", coords: [-33.9249, 18.4241], zoom: 8 },
-    { name: "Intarlaken", coords: [46.6863, 7.8632], zoom: 9 }
+    { name: "Interlaken", coords: [46.6863, 7.8632], zoom: 9 }
 ];
 
 // Créer la carte avec taille réduite

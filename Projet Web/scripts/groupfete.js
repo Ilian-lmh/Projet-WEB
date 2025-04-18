@@ -23,12 +23,12 @@ var subDestinations = {
         { name: "Spa détente face à la mer Hacienda Na Xamena", coords: [39.0873, 1.3097] }
     ],
     "Rio de Janeiro": [
-        { name: "Tour en hélicoptère autour du Christ Rédempteur📍 Helipad de Lagoa ou Sugarloaf Heliport", coords: [−22.9646, −43.2178] },
-        { name: "Soirée VIP au Copacabana Palace📍 Copacabana Palace", coords: [−22.9666, −43.1791] },
-        { name: "Cours de samba privé avec des pros📍 Ginga Tropical", coords: [−22.9126, −43.1780] },
-        { name: "Excursion en yacht autour des îles📍 Marina da Glória", coords: [−22.9192, −43.1686] },
-        { name: "Session de surf avec moniteur à Ipanema📍 Plage d’Ipanema ", coords: [−22.9836, −43.2066] },
-        { name: "BBQ brésilien au bord de la plage📍 Barra da Tijuca", coords: [−23.0036, −43.3653] }
+        { name: "Tour en hélicoptère autour du Christ Rédempteur📍 Helipad de Lagoa ou Sugarloaf Heliport", coords: [-22.9646, -43.2178] },
+        { name: "Soirée VIP au Copacabana Palace📍 Copacabana Palace", coords: [-22.9666, -43.1791] },
+        { name: "Cours de samba privé avec des pros📍 Ginga Tropical", coords: [-22.9126, -43.1780] },
+        { name: "Excursion en yacht autour des îles📍 Marina da Glória", coords: [-22.9192, -43.1686] },
+        { name: "Session de surf avec moniteur à Ipanema📍 Plage d’Ipanema ", coords: [-22.9836, -43.2066] },
+        { name: "BBQ brésilien au bord de la plage📍 Barra da Tijuca", coords: [-23.0036, -43.3653] }
     ]
 };
 
@@ -124,11 +124,7 @@ window.zoomToLocation = function (lat, lng, zoom, buttonEl) {
 
     document.getElementById("resetBtn").style.display = "inline-block";
 
-
-
-
-
-    // Supprimer les anciens sous-marqueurs
+  // Supprimer les anciens sous-marqueurs
     subMarkers.forEach(marker => map.removeLayer(marker));
     subMarkers = [];
 
@@ -143,7 +139,6 @@ window.zoomToLocation = function (lat, lng, zoom, buttonEl) {
     });
 
 };
-
 // Bouton reset
 document.getElementById("resetBtn").addEventListener("click", function () {
     map.flyTo([20, 0], 2);
