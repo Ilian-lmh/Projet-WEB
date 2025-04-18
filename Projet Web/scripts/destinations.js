@@ -4,9 +4,9 @@
     "Rio de Janeiro": "../Projet Web/ville/rio.html",
     "Moab": "../Projet Web/ville/moab.html",
     "Cap Town": "../Projet Web/ville/cap.html",
-    "Intarlaken": "../Projet Web/ville/intarlaken.html",
+    "Intarlaken": "../Projet Web/ville/interlaken.html",
     "Bali": "../Projet Web/ville/bali.html",
-    "Maroc": "../Projet Web/ville/maroc.html",
+    "Chefchaouen": "../Projet Web/ville/chefchaouen.html",
     "Costa Rica": "../Projet Web/ville/costa.html",
 }
 
@@ -21,36 +21,77 @@ var subDestinations = {
         { name: "Séance SPA de luxe ", coords: [48.8669, 2.3056] }
     ],
     "Ibiza": [
-        { name: "Arenal", coords: [10.47, -84.65] },
-        { name: "Tamarindo", coords: [10.30, -85.84] }
+        { name: "📍 Pacha Ibiza, Marina Botafoch", coords: [38.9171, 1.4459] },
+        { name: "Croisière privée avec open bar📍 Départ souvent depuis Marina Ibiza", coords: [38.9098, 1.4429] },
+        { name: "📍 Cala Bassa Beach Club (CBbC)", coords: [38.9630, 1.2368] },
+        { name: "Pool party au Ushuaïa", coords: [38.8814, 1.4052] },
+        { name: "Excursion en jetski autour de l'île📍 Point de départ souvent à San Antonio", coords: [38.9805, 1.3006] },
+        { name: "Spa détente face à la mer Hacienda Na Xamena", coords: [39.0873, 1.3097] }
     ],
     "Rio de Janeiro": [
-        { name: "Ubud", coords: [-8.5069, 115.2625] },
-        { name: "Kuta", coords: [-8.7177, 115.1682] }
+        { name: "Tour en hélicoptère autour du Christ Rédempteur📍 Helipad de Lagoa ou Sugarloaf Heliport", coords: [-22.9646, -43.2178] },
+        { name: "Soirée VIP au Copacabana Palace📍 Copacabana Palace", coords: [-22.9666, -43.1791] },
+        { name: "Cours de samba privé avec des pros📍 Ginga Tropical", coords: [-22.9126, -43.1780] },
+        { name: "Excursion en yacht autour des îles📍 Marina da Glória", coords: [-22.9192, -43.1686] },
+        { name: "Session de surf avec moniteur à Ipanema📍 Plage d’Ipanema ", coords: [-22.9836, -43.2066] },
+        { name: "BBQ brésilien au bord de la plage📍 Barra da Tijuca", coords: [-23.0036, -43.3653] }
     ],
     "Moab": [
-        { name: "Marrakech", coords: [31.63, -8.00] },
-        { name: "Essaouira", coords: [31.51, -9.77] }
+        { name: "Tour en buggy dans le désert 📍 Sand Flats Recreation Area", coords: [38.5662, -109.4906] },
+        { name: "Escalade des canyons📍 Indian Creek", coords: [38.0164, -109.5632] },
+        { name: "Saut en parachute📍 Skydive Moab", coords: [38.7556, -109.7546] },
+        { name: "Rando VTT sur Slickrock📍 Slickrock Bike Trail", coords: [38.5739, -109.5126] },
+        { name: "Kayak sur le Colorado📍 Colorado River près de Moab", coords: [38.5828, -109.5512] }
     ],
-    "Cap Town": [
-        { name: "Arenal", coords: [10.47, -84.65] },
-        { name: "Tamarindo", coords: [10.30, -85.84] }
+    "Cap town": [
+        { name: "Skydive Cape Town", coords: [-33.5566, 18.4893] },
+        { name: "Gansbaai", coords: [-34.5800, 19.3500] },
+        { name: "Randonnée Table Mountain", coords: [-33.9561, 18.4037] },
+        { name: " Muizenberg Beach", coords: [-34.1067, 18.4696] },
+        { name: "Cape Canopy Tour", coords: [-34.0872, 19.0257] }
     ],
-    "Intarlaken": [
-        { name: "Ubud", coords: [-8.5069, 115.2625] },
-        { name: "Kuta", coords: [-8.7177, 115.1682] }
+    "Interlaken": [
+        { name: "Paragliding Interlaken", coords: [46.6886, 7.8496] },
+        { name: "Stockhorn Bungee", coords: [46.7167, 7.5670] },
+        { name: "Hintere Lauterbrunnen vallée", coords: [46.5380, 7.9094] },
+        { name: "Via Ferrata Mürren", coords: [46.5586, 7.8923] },
+        { name: "Lütschine River", coords: [46.6667, 7.8500] }
     ],
-    "Maroc": [
-        { name: "Marrakech", coords: [31.63, -8.00] },
-        { name: "Essaouira", coords: [31.51, -9.77] }
+    "Chefchaouen": [
+        {
+            name: "Bain traditionnel au hammam",
+            coords: [35.1685, -5.2641]
+        },
+        {
+            name: "Thé à la menthe sur les toits",
+            coords: [35.1691, -5.2638]
+        },
+        {
+            name: "Visite guidée de la vieille ville",
+            coords: [35.1687, -5.2634]
+        },
+        {
+            name: "Séance de yoga en montagne",
+            coords: [35.1727, -5.2732]
+        },
+        {
+            name: "Balade à Akchour",
+            coords: [35.2502, -5.2255]
+        }
     ],
     "Costa Rica": [
-        { name: "Arenal", coords: [10.47, -84.65] },
-        { name: "Tamarindo", coords: [10.30, -85.84] }
+        { name: "Sources chaudes naturelles à La Fortuna", coords: [10.4700, -84.6450] },
+        { name: "Cours de yoga sur la plage à Puerto Viejo", coords: [9.6550, -82.7541] },
+        { name: "Massage dans la jungle", coords: [10.3026, -84.7950] },
+        { name: "Surf tranquille à Santa Teresa", coords: [9.6563, -85.1603] },
+        { name: "Randonnée dans le parc national de Corcovado", coords: [8.5464, -83.5912] }
     ],
     "Bali": [
-        { name: "Ubud", coords: [-8.5069, 115.2625] },
-        { name: "Kuta", coords: [-8.7177, 115.1682] }
+        { name: "Massage balinais traditionnel", coords: [-8.5074, 115.2605] },
+        { name: "Cours de yoga au lever du soleil", coords: [-8.5062, 115.2627] },
+        { name: "Session de méditation guidée à Ubud", coords: [-8.5195, 115.2622] },
+        { name: "Découverte des rizières en vélo", coords: [-8.4317, 115.2799] },
+        { name: "Bain floral dans une villa spa", coords: [-8.5052, 115.2650] }
     ]
 };
 
@@ -66,7 +107,7 @@ var locations = [
     { name: "Cap town", coords: [-33.9249, 18.4241], zoom: 9 },
     { name: "Intarlaken", coords: [46.6863, 7.8632], zoom: 9 },
     { name: "Bali", coords: [-8.4095, 115.1889], zoom: 5 },
-    { name: "Maroc", coords: [31.7917, -7.0926], zoom: 5 },
+    { name: "Chefchaouen", coords: [35.1688, -5.2636], zoom: 13 },
     { name: "Costa Rica", coords: [9.7489, -83.7534], zoom: 5 }
 
 ];
