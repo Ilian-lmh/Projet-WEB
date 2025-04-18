@@ -8,8 +8,36 @@ Description du projet : Notre projet correspond donc à un site de réservation 
 Voila donc les 3 parties principales, maintenant on a également la posibilité d'accéder à un devis et à toutes les destiantions possiblent directement via l'index.
 
 
-EXPLICATON DE MAHé
+EXPLICATON DE MAHE : 
 
+Présentation du site et navigation
+Mise en place de la structure principale de la page d’accueil avec une navigation claire et intuitive.
+
+Navbar personnalisée permettant d'accéder aux pages : Accueil, Aventure, Détente, Fête.
+
+Mise en avant des groupes thématiques : Création de 3 sections illustrées correspondant aux catégories proposées : 
+Aventure Extrême, fête et Luxe et Détente et Bien-être et chaque groupe contient une image, une courte description et un lien vers sa page dédiée.
+
+Mise en avant des destinations :  Section "Top destination pour un EVG réussi" présentant 6 villes dans une grille moderne avec visuels attractifs.
+Chaque carte de destination affiche un titre avec effet visuel au survol.
+Appels à l’action (CTA) : Bouton vers la page de demande de devis, Bouton vers la page des destinations complètes
+
+Témoignages clients : Bloc d’avis avec trois témoignages clients stylisés, apportant une dimension humaine et engageante au site.
+
+Formulaire de demande de devis – devis.html
+Formulaire complet : Saisie des dates de départ et de retour
+
+Choix du lieu de départ, destination, nombre de participants et budget
+Zone de texte libre pour les demandes personnalisées
+Interaction JavaScript : Gestion de l’envoi du formulaire avec confirmation sans rechargement de page
+
+Affichage d’un message de remerciement avec lien retour vers l’accueil puis réinitialisation du formulaire après envoi
+
+Design responsive et stylé : Mise en page centrée avec des styles adaptés pour mobile et desktop
+Boutons personnalisés avec effets au survol
+
+
+EXPLICATION D'ILIAN :
 
 Les group.js permettent plusieurs choses, ils agissent directement sur les pages groupfete.html, groupav.html et groupDet.html :
 Ces script gère une carte interactive Leaflet avec des destinations principales (pays/villes) et leurs sous-activités touristiques (comme le surf, les spas, les fêtes…), avec plusieurs possibilitées comme :
@@ -25,7 +53,7 @@ Ces script gère une carte interactive Leaflet avec des destinations principales
   Afficher des points secondaires sur la carte : cela permet d'afficher des boutons correspondant aux activités du lieu et d'affiher des boutons contextuels ("Réserver", "Réinitialiser") ce qui ensuite permet une redirection spécifique vers la page de réservation correspondante.
 
 
-EXPLICATION DE LUACS 
+EXPLICATION DE LUCAS 
 
 
 Notre projet n'a pas besoin d'installation particulière.
